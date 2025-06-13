@@ -2,190 +2,173 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio – Senior Business Analyst</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Senior BA Portfolio – LioBank Style</title>
   <style>
+    :root {
+      --primary: #4B3D8F;
+      --accent: #FFC000;
+      --bg: #F5F8FA;
+      --text: #333;
+    }
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #F5F8FA;
-      color: #333;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
     }
 
-    .slider {
-      display: flex;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      height: 100vh;
-      scroll-behavior: smooth;
-    }
-
-    .slide {
-      flex: 0 0 100%;
-      scroll-snap-align: start;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    header {
+      background-color: var(--primary);
+      color: white;
       padding: 2rem;
-    }
-
-    .content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      max-width: 1000px;
-      width: 100%;
-    }
-
-    .text {
-      flex: 1;
-      padding: 2rem;
-    }
-
-    .text h1 {
-      font-size: 2.5rem;
-      color: #B796D5;
-    }
-
-    .text h2 {
-      color: #FFC000;
-      margin: 0.5rem 0;
-    }
-
-    .text p {
-      margin-top: 1rem;
-      line-height: 1.5;
-    }
-
-    .image {
-      flex: 1;
       text-align: center;
     }
 
-    .image img {
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style: disc inside;
+      padding-left: 1rem;
+    }
+
+    .banner {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .banner img {
       max-width: 100%;
       height: auto;
     }
 
-    #prevBtn, #nextBtn {
-      position: fixed;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: #FFC000;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 50%;
-      font-size: 1.5rem;
-      cursor: pointer;
-      z-index: 9999;
-      pointer-events: auto;
+    .illustration {
+      text-align: center;
+      margin: 2rem 0;
     }
 
-    #prevBtn { left: 1rem; }
-    #nextBtn { right: 1rem; }
+    .illustration img {
+      width: 60%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-    @media (max-width: 768px) {
-      .content {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .image, .text {
-        padding: 1rem;
-      }
-
-      .text h1 {
-        font-size: 2rem;
-      }
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1rem;
     }
   </style>
 </head>
 <body>
-  <div class="slider">
-    <!-- Slide 1 -->
-    <section class="slide">
-      <div class="content">
-        <div class="image">
-          <img src="images/Banner.svg" alt="Fintech Illustration" />
-        </div>
-        <div class="text">
-          <h1>Hello!</h1>
-          <h2>I'm a Senior Business Analyst</h2>
-          <p>Driven by data and business insights.</p>
-        </div>
-      </div>
-    </section>
+  <header>
+    <h1>Your Name</h1>
+    <p>Senior Business Analyst | Fintech Enthusiast</p>
+    <p>Expected Salary: 50M VND+</p>
+  </header>
 
-    <!-- Slide 2 -->
-    <section class="slide">
-      <div class="content">
-        <div class="image">
-          <img src="images/banner.svg" alt="Fintech Illustration" />
-        </div>
-        <div class="text">
-          <h1>Skills</h1>
-          <ul>
-            <li>Business Analysis</li>
-            <li>Product Ownership</li>
-            <li>SQL / Data Analytics</li>
-            <li>UX Writing & Process Mapping</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 3 -->
-    <section class="slide">
-      <div class="content">
-        <div class="image">
-          <img src="images/banner.svg" alt="Fintech Illustration" />
-        </div>
-        <div class="text">
-          <h1>Projects</h1>
-          <p>• LioBank App Redesign</p>
-          <p>• Digital Lending Automation</p>
-          <p>• Core Banking Integration</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Slide 4 -->
-    <section class="slide">
-      <div class="content">
-        <div class="image">
-          <img src="images/banner.svg" alt="Fintech Illustration" />
-        </div>
-        <div class="text">
-          <h1>Contact</h1>
-          <p>Email: [your.email@example.com]</p>
-          <p>LinkedIn: [your-link]</p>
-          <p>GitHub: [your-link]</p>
-        </div>
-      </div>
-    </section>
+  <div class="banner">
+    <img src="images/Banner.svg" alt="Fintech Banner">
   </div>
 
-  <!-- Navigation buttons -->
-  <button id="prevBtn">←</button>
-  <button id="nextBtn">→</button>
+  <section>
+    <h2>About Me</h2>
+    <p>Experienced BA in fintech, specialized in digital banking, card systems, and product management. Skilled in data analytics, stakeholder communication, and agile delivery.</p>
+  </section>
 
-  <script>
-    const slider = document.querySelector('.slider');
-    const slideWidth = window.innerWidth;
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Business Analysis & Requirement Management</li>
+      <li>Data Interpretation (SQL, Excel, PowerBI)</li>
+      <li>Product Design & User Journey Mapping</li>
+      <li>Wireframing, UX Writing</li>
+      <li>Agile/Scrum Methodology</li>
+    </ul>
+  </section>
 
-    document.getElementById('prevBtn').addEventListener('click', () => {
-      slider.scrollLeft -= slideWidth;
-    });
+  <section>
+    <h2>Projects</h2>
+    <ul>
+      <li>LioBank App Redesign – focus on user onboarding & card activation</li>
+      <li>Soft Collection Engine – rule-based system integrated with MCS</li>
+      <li>Card Lifecycle Automation – Way4 & CRM integration</li>
+    </ul>
+  </section>
 
-    document.getElementById('nextBtn').addEventListener('click', () => {
-      slider.scrollLeft += slideWidth;
-    });
-  </script>
+  <section>
+    <h2>Tester Experience</h2>
+    <p>Worked closely with QA team for UAT & SIT testing. Prepared test cases, managed bug lifecycle, and ensured full coverage of user scenarios.</p>
+    <div class="illustration">
+      <img src="images/tester.svg" alt="Tester Illustration">
+    </div>
+  </section>
+
+  <section>
+    <h2>Meeting & Collaboration</h2>
+    <p>Facilitated workshops, sprint planning, and stakeholder alignment meetings. Clear documentation and follow-up to ensure delivery and scope clarity.</p>
+    <div class="illustration">
+      <img src="images/meeting.svg" alt="Meeting Illustration">
+    </div>
+  </section>
+
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      <li>CBAP – Certified Business Analysis Professional (in-progress)</li>
+      <li>Agile Business Analyst – ICAgile</li>
+      <li>Product Management Certificate – Coursera</li>
+    </ul>
+    <div class="illustration">
+      <img src="images/certification.svg" alt="Certification Illustration">
+    </div>
+  </section>
+
+  <section>
+    <h2>Data & Reporting</h2>
+    <p>Familiar with building dashboards for KPIs, DWH queries, and visual storytelling using PowerBI and Excel for business insights.</p>
+    <div class="illustration">
+      <img src="images/data.svg" alt="Data Illustration">
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: your.email@example.com</p>
+    <p>LinkedIn: linkedin.com/in/yourname</p>
+    <p>GitHub: github.com/yourusername</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Your Name. All rights reserved.
+  </footer>
 </body>
 </html>
