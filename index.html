@@ -79,6 +79,48 @@
     }
   </style>
 </head>
+  <!-- Arrow Navigation -->
+<button id="prevBtn" style="
+  position: fixed;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  background-color: #FFC000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+">←</button>
+
+<button id="nextBtn" style="
+  position: fixed;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  background-color: #FFC000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+">→</button>
+
+<script>
+  const slider = document.querySelector('.slider');
+  const slideWidth = window.innerWidth;
+
+  document.getElementById('prevBtn').addEventListener('click', () => {
+    slider.scrollLeft -= slideWidth;
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', () => {
+    slider.scrollLeft += slideWidth;
+  });
+</script>
+
 <body>
   <div class="slider">
     <!-- Slide 1: Introduction -->
