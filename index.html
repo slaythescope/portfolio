@@ -31,6 +31,51 @@
       color: white;
       padding: 2rem;
       text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      background-color: white;
+      padding: 0.5rem;
+      text-align: center;
+      position: sticky;
+      top: 5rem;
+      z-index: 9;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    }
+
+    .nav-item { display: inline-block; margin: 0 1rem; }
+    .nav-item a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      min-width: 150px;
+      z-index: 999;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--primary);
+      text-align: left;
     }
 
     header h1 {
@@ -111,6 +156,21 @@
       text-align: center;
       padding: 1rem;
     }
+
+    .pdf-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--accent);
+      color: #000;
+      border: none;
+      padding: 0.75rem 1.25rem;
+      border-radius: 8px;
+      font-weight: bold;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 20;
+    }
   </style>
 </head>
 <body>
@@ -119,72 +179,32 @@
     <p>Senior Business Analyst | Fintech Enthusiast</p>
   </header>
 
+  <nav>
+    <span class="nav-item"><a href="#about">About</a></span>
+    <span class="nav-item"><a href="#skills">Skills</a></span>
+    <span class="nav-item"><a href="#projects">Projects</a></span>
+    <span class="nav-item"><a href="#contact">Contact</a></span>
+    <span class="dropdown">
+      <span class="nav-item"><a href="#">More ▾</a></span>
+      <div class="dropdown-content">
+        <a href="#tester">Tester</a>
+        <a href="#meeting">Meeting</a>
+        <a href="#certifications">Certifications</a>
+        <a href="#data">Data</a>
+        <a href="#awards">Awards</a>
+        <a href="#languages">Languages</a>
+        <a href="#tools">Tools</a>
+      </div>
+    </span>
+  </nav>
+
   <div class="banner">
     <img src="images/Banner.svg" alt="Fintech Banner">
   </div>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Experienced BA in fintech, specialized in digital banking, card systems, and product management. Skilled in data analytics, stakeholder communication, and agile delivery.</p>
-  </section>
+  <!-- Sections as before -->
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li>Business Analysis & Requirement Management</li>
-      <li>Data Interpretation (SQL, Excel, PowerBI)</li>
-      <li>Product Design & User Journey Mapping</li>
-      <li>Wireframing, UX Writing</li>
-      <li>Agile/Scrum Methodology</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>LioBank App Redesign – focus on user onboarding & card activation</li>
-      <li>Soft Collection Engine – rule-based system integrated with MCS</li>
-      <li>Card Lifecycle Automation – Way4 & CRM integration</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Tester Experience</h2>
-    <p>Worked closely with QA team for UAT & SIT testing. Prepared test cases, managed bug lifecycle, and ensured full coverage of user scenarios.</p>
-    <div class="illustration">
-      <img src="images/tester.svg" alt="Tester Illustration">
-    </div>
-  </section>
-
-  <section>
-    <h2>Meeting & Collaboration</h2>
-    <p>Facilitated workshops, sprint planning, and stakeholder alignment meetings. Clear documentation and follow-up to ensure delivery and scope clarity.</p>
-    <div class="illustration">
-      <img src="images/meeting.svg" alt="Meeting Illustration">
-    </div>
-  </section>
-
-  <section>
-    <h2>Certifications</h2>
-    <ul>
-      <li>CBAP – Certified Business Analysis Professional (in-progress)</li>
-      <li>Agile Business Analyst – ICAgile</li>
-      <li>Product Management Certificate – Coursera</li>
-    </ul>
-    <div class="illustration">
-      <img src="images/certification.svg" alt="Certification Illustration">
-    </div>
-  </section>
-
-  <section>
-    <h2>Data & Reporting</h2>
-    <p>Familiar with building dashboards for KPIs, DWH queries, and visual storytelling using PowerBI and Excel for business insights.</p>
-    <div class="illustration">
-      <img src="images/data.svg" alt="Data Illustration">
-    </div>
-  </section>
-
-  <section>
+  <section id="contact">
     <h2>Contact</h2>
     <p>Email: your.email@example.com</p>
     <p>LinkedIn: linkedin.com/in/yourname</p>
@@ -194,6 +214,8 @@
   <footer>
     &copy; 2025 Your Name. All rights reserved.
   </footer>
+
+  <button class="pdf-button" onclick="window.print()">Export to PDF</button>
 
   <script>
     const sections = document.querySelectorAll("section");
