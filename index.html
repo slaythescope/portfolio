@@ -2,56 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Senior Business Analyst Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
+      background: #f9f9f9;
       color: #333;
+      line-height: 1.6;
     }
+
     header {
-      background-color: #004d99;
+      background-color: #003366;
       color: white;
       padding: 40px 20px;
       text-align: center;
     }
+
+    header img {
+      width: 250px;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
     .container {
       max-width: 900px;
       margin: auto;
-      padding: 20px;
+      padding: 30px 20px;
     }
+
     h2 {
-      border-bottom: 2px solid #004d99;
+      border-bottom: 2px solid #003366;
       padding-bottom: 5px;
+      margin-top: 40px;
     }
+
     .project {
-      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      gap: 20px;
     }
+
+    .project img {
+      width: 120px;
+      border-radius: 8px;
+    }
+
     .skills ul {
       list-style-type: none;
       padding-left: 0;
     }
+
     .skills ul li {
-      background-color: #e0e0e0;
       display: inline-block;
+      background-color: #e0e0e0;
       margin: 5px;
-      padding: 5px 10px;
-      border-radius: 4px;
+      padding: 6px 12px;
+      border-radius: 20px;
     }
+
     footer {
       background-color: #eee;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
       font-size: 0.9em;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
+
   <header>
+    <img src="https://undraw.co/api/illustrations/f09e6a15-cb12-4985-9648-51fc0f3a6e4e" alt="Fintech Illustration" />
     <h1>[Your Name]</h1>
     <p>Senior Business Analyst</p>
     <p>Email: your.email@example.com | LinkedIn: linkedin.com/in/yourname</p>
@@ -61,23 +94,31 @@
     <section class="about">
       <h2>About Me</h2>
       <p>
-        Experienced Senior Business Analyst with a proven track record in leading digital transformation projects, improving operational efficiency, and bridging communication between business and technology teams in the fintech sector.
+        Senior BA with 5+ years experience in digital banking, product discovery, and process optimization. Passionate about bridging business needs with technical delivery and driving innovation through data-driven decisions.
       </p>
     </section>
 
     <section class="projects">
       <h2>Key Projects</h2>
+
       <div class="project">
-        <h3>Digital Lending Optimization</h3>
-        <p><strong>Duration:</strong> Jan 2023 – May 2023</p>
-        <p><strong>Role:</strong> Led requirement gathering and process redesign for a digital loan product. Collaborated with developers and UI/UX to launch in-app loan applications.</p>
-        <p><strong>Result:</strong> Increased approval rate by 35%, reduced processing time by 40%.</p>
+        <img src="https://undraw.co/api/illustrations/71f1c6b7-427d-45e2-95a0-e5f6b8e763ca" alt="Loan Project">
+        <div>
+          <h3>Digital Lending Optimization</h3>
+          <p><strong>Duration:</strong> Jan 2023 – May 2023</p>
+          <p><strong>Role:</strong> Led redesign of end-to-end digital loan process with integration to credit scoring engine.</p>
+          <p><strong>Result:</strong> +35% approval rate, -40% processing time.</p>
+        </div>
       </div>
+
       <div class="project">
-        <h3>eKYC Enhancement</h3>
-        <p><strong>Duration:</strong> Jul 2022 – Dec 2022</p>
-        <p><strong>Role:</strong> Coordinated with vendor and legal team to enhance eKYC module, ensuring SBV compliance.</p>
-        <p><strong>Result:</strong> Improved pass rate by 25% and decreased manual reviews by 50%.</p>
+        <img src="https://undraw.co/api/illustrations/5c8e3a25-73b5-4c94-a563-cab3fa97a6fb" alt="eKYC">
+        <div>
+          <h3>eKYC Enhancement</h3>
+          <p><strong>Duration:</strong> Jul 2022 – Dec 2022</p>
+          <p><strong>Role:</strong> Coordinated vendor integration, UI improvement, and compliance audit alignment.</p>
+          <p><strong>Result:</strong> Reduced manual reviews by 50%.</p>
+        </div>
       </div>
     </section>
 
@@ -85,12 +126,12 @@
       <h2>Skills</h2>
       <ul>
         <li>Business Analysis</li>
-        <li>Jira & Confluence</li>
-        <li>SQL & Excel</li>
         <li>Agile/Scrum</li>
-        <li>Process Mapping</li>
+        <li>Jira & Confluence</li>
         <li>Stakeholder Management</li>
-        <li>Figma & UX Collaboration</li>
+        <li>SQL & Excel</li>
+        <li>UX Collaboration</li>
+        <li>Process Mapping</li>
       </ul>
     </section>
 
@@ -102,7 +143,8 @@
   </div>
 
   <footer>
-    &copy; 2025 [Your Name] | Senior Business Analyst Portfolio
+    &copy; 2025 [Your Name] | Senior BA Portfolio
   </footer>
+
 </body>
 </html>
