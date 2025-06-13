@@ -36,6 +36,21 @@
       z-index: 10;
     }
 
+    header h1 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+    }
+
+    #datetime {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #ddd;
+    }
+
     nav {
       background-color: white;
       padding: 0.5rem;
@@ -76,15 +91,6 @@
       padding: 0.5rem 1rem;
       color: var(--primary);
       text-align: left;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
     }
 
     section {
@@ -175,8 +181,9 @@
 </head>
 <body>
   <header>
-    <h1>Your Name</h1>
-    <p>Senior Business Analyst | Fintech Enthusiast</p>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Thank you for visiting. This is a glimpse into my career journey and fintech passion.</p>
+    <div id="datetime"></div>
   </header>
 
   <nav>
@@ -202,7 +209,59 @@
     <img src="images/Banner.svg" alt="Fintech Banner">
   </div>
 
-  <!-- Sections as before -->
+  <section id="about">
+    <h2>About</h2>
+    <p>Professional Business Analyst with 6+ years in the fintech industry, passionate about creating digital products that make finance accessible and intuitive.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li>Business Process Modeling</li>
+      <li>Stakeholder Communication</li>
+      <li>SQL, Excel, BPMN</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <ul>
+      <li>Digital Onboarding System – LioBank</li>
+      <li>Loan Management Workflow Automation</li>
+    </ul>
+  </section>
+
+  <section id="tester">
+    <h2>Tester</h2>
+    <div class="illustration">
+      <img src="images/tester.svg" alt="Tester">
+    </div>
+    <p>Experienced in supporting QA teams with business logic, validating test cases, and ensuring high product quality through UAT sessions.</p>
+  </section>
+
+  <section id="meeting">
+    <h2>Meeting</h2>
+    <div class="illustration">
+      <img src="images/meeting.svg" alt="Meeting">
+    </div>
+    <p>Organizing and facilitating meetings to bridge communication between technical and business teams is one of my core strengths.</p>
+  </section>
+
+  <section id="certifications">
+    <h2>Certifications</h2>
+    <div class="illustration">
+      <img src="images/certification.svg" alt="Certifications">
+    </div>
+    <p>Certified in Business Analysis, Agile Practices, and Data Analysis – continually investing in personal growth and professional knowledge.</p>
+  </section>
+
+  <section id="data">
+    <h2>Data</h2>
+    <div class="illustration">
+      <img src="images/data.svg" alt="Data">
+    </div>
+    <p>Data-driven decision making is part of my BA philosophy. I love turning raw data into actionable insights that drive product improvements.</p>
+  </section>
 
   <section id="contact">
     <h2>Contact</h2>
@@ -234,6 +293,13 @@
     };
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
+
+    function updateDateTime() {
+      const dt = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      document.getElementById("datetime").textContent = dt.toLocaleDateString("en-US", options);
+    }
+    updateDateTime();
   </script>
 </body>
 </html>
