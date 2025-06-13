@@ -2,174 +2,190 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fintech Portfolio - Senior BA</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio – Senior Business Analyst</title>
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: 'Poppins', sans-serif;
     }
+
     body {
-      background-color: #FFFFFF;
-      color: #1A1A1A;
-      overflow-x: hidden;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #F5F8FA;
+      color: #333;
     }
-    .slide {
-      width: 100vw;
+
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
       height: 100vh;
+      scroll-behavior: smooth;
+    }
+
+    .slide {
+      flex: 0 0 100%;
+      scroll-snap-align: start;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    .content {
       display: flex;
       flex-direction: row;
       align-items: center;
-      justify-content: space-between;
-      padding: 4rem;
-    }
-    .content {
-      max-width: 50%;
-    }
-    .title {
-      font-size: 3rem;
-      color: #B796D5;
-      margin-bottom: 1rem;
-    }
-    .desc {
-      font-size: 1.2rem;
-      color: #606770;
-      line-height: 1.6;
-    }
-    .button {
-      margin-top: 2rem;
-      padding: 0.8rem 1.5rem;
-      background-color: #FFC000;
-      color: #000;
-      border: none;
-      border-radius: 8px;
-      font-weight: 600;
-      cursor: pointer;
-    }
-    .image {
-      width: 40%;
-    }
-    .image img {
+      justify-content: center;
+      max-width: 1000px;
       width: 100%;
     }
-    .section {
-      min-width: 100vw;
-      scroll-snap-align: start;
-      display: flex;
+
+    .text {
+      flex: 1;
+      padding: 2rem;
     }
-    .slider {
-      display: flex;
-      overflow-x: scroll;
-      scroll-snap-type: x mandatory;
-      scroll-behavior: smooth;
-    }
-    .section-title {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
+
+    .text h1 {
+      font-size: 2.5rem;
       color: #B796D5;
     }
-    ul {
-      list-style-type: square;
-      padding-left: 1.2rem;
-      color: #1A1A1A;
+
+    .text h2 {
+      color: #FFC000;
+      margin: 0.5rem 0;
+    }
+
+    .text p {
+      margin-top: 1rem;
+      line-height: 1.5;
+    }
+
+    .image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #prevBtn, #nextBtn {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #FFC000;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 50%;
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 9999;
+      pointer-events: auto;
+    }
+
+    #prevBtn { left: 1rem; }
+    #nextBtn { right: 1rem; }
+
+    @media (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .image, .text {
+        padding: 1rem;
+      }
+
+      .text h1 {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
-  <!-- Arrow Navigation -->
-<button id="prevBtn" style="
-  position: fixed;
-  top: 50%;
-  left: 1rem;
-  transform: translateY(-50%);
-  background-color: #FFC000;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1000;
-">←</button>
-
-<button id="nextBtn" style="
-  position: fixed;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  background-color: #FFC000;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  cursor: pointer;
-  z-index: 1000;
-">→</button>
-
-<script>
-  const slider = document.querySelector('.slider');
-  const slideWidth = window.innerWidth;
-
-  document.getElementById('prevBtn').addEventListener('click', () => {
-    slider.scrollLeft -= slideWidth;
-  });
-
-  document.getElementById('nextBtn').addEventListener('click', () => {
-    slider.scrollLeft += slideWidth;
-  });
-</script>
-
 <body>
   <div class="slider">
-    <!-- Slide 1: Introduction -->
-    <section class="slide section" style="background-color: #F5F8FA;">
+    <!-- Slide 1 -->
+    <section class="slide">
       <div class="content">
-        <h1 class="title">Hi, I'm a Senior Business Analyst</h1>
-        <p class="desc">With deep experience in fintech, I turn complex ideas into efficient, user-centered solutions. Passionate about data-driven decisions, agile delivery, and seamless customer journeys.</p>
-        <button class="button">Contact Me</button>
-      </div>
-      <div class="image">
-        <img src="images/Banner.svg" alt="Fintech Illustration">
-      </div>
-    </section>
-
-    <!-- Slide 2: Skills -->
-    <section class="slide section" style="background-color: #FFFFFF;">
-      <div class="content">
-        <h2 class="section-title">Core Skills</h2>
-        <ul>
-          <li>Business Process Modeling (BPMN, UML)</li>
-          <li>Agile/Scrum, Jira & Confluence</li>
-          <li>SQL, Data Analysis, Tableau</li>
-          <li>Mobile Banking & Payment Gateway Integration</li>
-          <li>Requirement Gathering & BRD/FSD writing</li>
-        </ul>
+        <div class="image">
+          <img src="images/banner.svg" alt="Fintech Illustration" />
+        </div>
+        <div class="text">
+          <h1>Hello!</h1>
+          <h2>I'm a Senior Business Analyst</h2>
+          <p>Driven by data and business insights. Currently seeking roles in fintech with salary expectations from 50M VND.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Slide 3: Projects -->
-    <section class="slide section" style="background-color: #F5F8FA;">
+    <!-- Slide 2 -->
+    <section class="slide">
       <div class="content">
-        <h2 class="section-title">Key Projects</h2>
-        <ul>
-          <li>Liobank Mobile App – Led BA for onboarding & eKYC modules</li>
-          <li>QR Payment Platform – Integrated with domestic & Visa networks</li>
-          <li>Credit Card Portal – Improved UX and approval time by 30%</li>
-        </ul>
+        <div class="image">
+          <img src="images/banner.svg" alt="Fintech Illustration" />
+        </div>
+        <div class="text">
+          <h1>Skills</h1>
+          <ul>
+            <li>Business Analysis</li>
+            <li>Product Ownership</li>
+            <li>SQL / Data Analytics</li>
+            <li>UX Writing & Process Mapping</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- Slide 4: Contact -->
-    <section class="slide section" style="background-color: #FFFFFF;">
+    <!-- Slide 3 -->
+    <section class="slide">
       <div class="content">
-        <h2 class="section-title">Let's Connect</h2>
-        <p class="desc">📩 Email: your.email@example.com<br>
-        💼 LinkedIn: linkedin.com/in/yourprofile<br>
-        🌐 GitHub: github.com/yourusername</p>
+        <div class="image">
+          <img src="images/Banner.svg" alt="Fintech Illustration" />
+        </div>
+        <div class="text">
+          <h1>Projects</h1>
+          <p>• LioBank App Redesign</p>
+          <p>• Digital Lending Automation</p>
+          <p>• Core Banking Integration</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4 -->
+    <section class="slide">
+      <div class="content">
+        <div class="image">
+          <img src="images/banner.svg" alt="Fintech Illustration" />
+        </div>
+        <div class="text">
+          <h1>Contact</h1>
+          <p>Email: [your.email@example.com]</p>
+          <p>LinkedIn: [your-link]</p>
+          <p>GitHub: [your-link]</p>
+        </div>
       </div>
     </section>
   </div>
+
+  <!-- Navigation buttons -->
+  <button id="prevBtn">←</button>
+  <button id="nextBtn">→</button>
+
+  <script>
+    const slider = document.querySelector('.slider');
+    const slideWidth = window.innerWidth;
+
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      slider.scrollLeft -= slideWidth;
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      slider.scrollLeft += slideWidth;
+    });
+  </script>
 </body>
 </html>
