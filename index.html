@@ -1,36 +1,133 @@
-<header style="display: flex; align-items: center; justify-content: space-between; padding: 40px; background-color: #f7f9fc;">
-  <!-- Ảnh bên trái -->
-  <div style="max-width: 45%; margin-right: 40px;">
-    <img src="images/Banner.svg" alt="Fintech Banner" style="width: 100%; height: auto;" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fintech Portfolio - Senior BA</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #FFFFFF;
+      color: #1A1A1A;
+      overflow-x: hidden;
+    }
+    .slide {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem;
+    }
+    .content {
+      max-width: 50%;
+    }
+    .title {
+      font-size: 3rem;
+      color: #B796D5;
+      margin-bottom: 1rem;
+    }
+    .desc {
+      font-size: 1.2rem;
+      color: #606770;
+      line-height: 1.6;
+    }
+    .button {
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #FFC000;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .image {
+      width: 40%;
+    }
+    .image img {
+      width: 100%;
+    }
+    .section {
+      min-width: 100vw;
+      scroll-snap-align: start;
+      display: flex;
+    }
+    .slider {
+      display: flex;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #B796D5;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+      color: #1A1A1A;
+    }
+  </style>
+</head>
+<body>
+  <div class="slider">
+    <!-- Slide 1: Introduction -->
+    <section class="slide section" style="background-color: #F5F8FA;">
+      <div class="content">
+        <h1 class="title">Hi, I'm a Senior Business Analyst</h1>
+        <p class="desc">With deep experience in fintech, I turn complex ideas into efficient, user-centered solutions. Passionate about data-driven decisions, agile delivery, and seamless customer journeys.</p>
+        <button class="button">Contact Me</button>
+      </div>
+      <div class="image">
+        <img src="Banner.svg" alt="Fintech Illustration">
+      </div>
+    </section>
+
+    <!-- Slide 2: Skills -->
+    <section class="slide section" style="background-color: #FFFFFF;">
+      <div class="content">
+        <h2 class="section-title">Core Skills</h2>
+        <ul>
+          <li>Business Process Modeling (BPMN, UML)</li>
+          <li>Agile/Scrum, Jira & Confluence</li>
+          <li>SQL, Data Analysis, Tableau</li>
+          <li>Mobile Banking & Payment Gateway Integration</li>
+          <li>Requirement Gathering & BRD/FSD writing</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Slide 3: Projects -->
+    <section class="slide section" style="background-color: #F5F8FA;">
+      <div class="content">
+        <h2 class="section-title">Key Projects</h2>
+        <ul>
+          <li>Liobank Mobile App – Led BA for onboarding & eKYC modules</li>
+          <li>QR Payment Platform – Integrated with domestic & Visa networks</li>
+          <li>Credit Card Portal – Improved UX and approval time by 30%</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Slide 4: Contact -->
+    <section class="slide section" style="background-color: #FFFFFF;">
+      <div class="content">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="desc">📩 Email: your.email@example.com<br>
+        💼 LinkedIn: linkedin.com/in/yourprofile<br>
+        🌐 GitHub: github.com/yourusername</p>
+      </div>
+    </section>
   </div>
-
-  <!-- Nội dung bên phải -->
-  <div style="max-width: 70%;">
-    <h1 style="font-size: 36px; margin-bottom: 20px;">Hi, I'm a Senior Business Analyst 👩‍💼</h1>
-    <p style="font-size: 18px; color: #555;">
-      Passionate about bridging business and technology in the fintech space. Experienced in requirement gathering, stakeholder communication, and translating business needs into digital products.
-    </p>
-  </div>
-</header>
-
-
-
-...
-
-<div class="project">
-  <div>
-    <h3>Digital Lending Optimization</h3>
-    <p><strong>Duration:</strong> Jan 2023 – May 2023</p>
-    <p><strong>Role:</strong> Led redesign of end-to-end digital loan process with integration to credit scoring engine.</p>
-    <p><strong>Result:</strong> +35% approval rate, -40% processing time.</p>
-  </div>
-</div>
-
-<div class="project">
-  <div>
-    <h3>eKYC Enhancement</h3>
-    <p><strong>Duration:</strong> Jul 2022 – Dec 2022</p>
-    <p><strong>Role:</strong> Coordinated vendor integration, UI improvement, and compliance audit alignment.</p>
-    <p><strong>Result:</strong> Reduced manual reviews by 50%.</p>
-  </div>
-</div>
+</body>
+</html>
