@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Senior BA Portfolio – LioBank Style</title>
   <style>
     :root {
@@ -26,14 +26,59 @@
       scroll-behavior: smooth;
     }
 
+    nav {
+      background-color: white;
+      padding: 0.5rem;
+      text-align: center;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item {
+      display: inline-block;
+      margin: 0 1rem;
+    }
+
+    .nav-item a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: bold;
+    }
+
+    .dropdown {
+      display: inline-block;
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      min-width: 150px;
+      z-index: 999;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      display: block;
+      padding: 0.5rem 1rem;
+      color: var(--primary);
+      text-align: left;
+    }
+
     header {
       background-color: var(--primary);
       color: white;
       padding: 2rem;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      margin-top: 3.5rem; /* adjust for fixed navbar height */
     }
 
     header h1 {
@@ -51,55 +96,13 @@
       color: #ddd;
     }
 
-    nav {
-      background-color: white;
-      padding: 0.5rem;
-      text-align: center;
-      position: sticky;
-      top: 5rem;
-      z-index: 9;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.1);
-    }
-
-    .nav-item { display: inline-block; margin: 0 1rem; }
-    .nav-item a {
-      text-decoration: none;
-      color: var(--primary);
-      font-weight: bold;
-    }
-
-    .dropdown {
-      display: inline-block;
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      min-width: 150px;
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: var(--primary);
-      text-align: left;
-    }
-
     section {
-      padding: 4rem 2rem;
+      padding: 5rem 2rem 4rem; /* top padding adjusted to prevent overlap with fixed nav */
       max-width: 900px;
       margin: auto;
       opacity: 0;
       transform: translateX(0);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out, background-color 1s ease;
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
 
     section.left {
@@ -180,11 +183,6 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Thank you for visiting. This is a glimpse into my career journey and fintech passion.</p>
-    <div id="datetime"></div>
-  </header>
 
   <nav>
     <span class="nav-item"><a href="#about">About</a></span>
@@ -204,6 +202,12 @@
       </div>
     </span>
   </nav>
+
+  <header>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Thank you for visiting. This is a glimpse into my career journey and fintech passion.</p>
+    <div id="datetime"></div>
+  </header>
 
   <div class="banner">
     <img src="images/Banner.svg" alt="Fintech Banner">
@@ -291,6 +295,7 @@
         }
       });
     };
+
     window.addEventListener("scroll", revealOnScroll);
     window.addEventListener("load", revealOnScroll);
 
@@ -299,7 +304,9 @@
       const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
       document.getElementById("datetime").textContent = dt.toLocaleDateString("en-US", options);
     }
+
     updateDateTime();
   </script>
+
 </body>
 </html>
