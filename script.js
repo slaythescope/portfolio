@@ -54,7 +54,7 @@
       const menu = document.getElementById("mobileMenu");
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
-  </script>
+
   
 <!-- Lightbox Modal -->
 <div id="lightbox">
@@ -63,7 +63,7 @@
   <span id="lightbox-next" class="lightbox-nav">→</span>
 </div>
 
-<script>
+
   const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const prevBtn = document.getElementById('lightbox-prev');
