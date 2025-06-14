@@ -1,4 +1,3 @@
-  <script>
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll("nav a");
 
@@ -108,4 +107,3 @@
   lightbox.addEventListener('click', () => {
     lightbox.style.display = 'none';
   });
-</script>
