@@ -390,8 +390,6 @@
   <h2>Certifications</h2>
    <div class="certifications-gallery">
       <img src="images/cer1.jpg" alt="Certification 1">
-      <img src="images/cer2.jpg" alt="Certification 2">
-      <img src="images/cer3.jpg" alt="Certification 3">
     </div>
 </section>
 
@@ -479,9 +477,9 @@
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const awardImgs = document.querySelectorAll('.awards-gallery img');
+    const allImgs = document.querySelectorAll('.awards-gallery img,.certifications-gallery img,');
 
-    awardImgs.forEach(img => {
+    allImgs.forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
         lightbox.style.display = 'flex';
