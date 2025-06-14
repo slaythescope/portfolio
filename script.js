@@ -55,16 +55,7 @@
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
 
-  
-<!-- Lightbox Modal -->
-<div id="lightbox">
-  <span id="lightbox-prev" class="lightbox-nav">←</span>
-  <img id="lightbox-img" src="" alt="Lightbox Image">
-  <span id="lightbox-next" class="lightbox-nav">→</span>
-</div>
-
-
-  const lightbox = document.getElementById('lightbox');
+    const lightbox = document.getElementById('lightbox');
   const lightboxImg = document.getElementById('lightbox-img');
   const prevBtn = document.getElementById('lightbox-prev');
   const nextBtn = document.getElementById('lightbox-next');
