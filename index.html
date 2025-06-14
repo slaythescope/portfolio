@@ -477,7 +477,9 @@
 
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    const allImgs = document.querySelectorAll('.awards-gallery img,.certifications-gallery img,');
+    const awardImgs = document.querySelectorAll('.awards-gallery img');
+    const certImgs = document.querySelectorAll('.certifications-gallery img');
+    const allImgs = [...awardImgs, ...certImgs];
 
     allImgs.forEach(img => {
       img.addEventListener('click', () => {
