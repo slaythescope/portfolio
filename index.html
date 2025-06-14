@@ -28,17 +28,6 @@
 
     nav {
       background-color: white;
-      padding: 0.5rem;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    nav {
-      background-color: white;
       padding: 0.5rem 1rem;
       position: fixed;
       top: 0;
@@ -107,32 +96,6 @@
       }
     }
 
-
-    .dropdown {
-      display: inline-block;
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: white;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      min-width: 150px;
-      z-index: 999;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    .dropdown-content a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: var(--primary);
-      text-align: left;
-    }
-
     header {
       background-color: var(--primary);
       color: white;
@@ -162,7 +125,7 @@
       margin: auto;
       opacity: 0;
       transform: translateX(0);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      transition: all 0.6s ease-out;
     }
 
     section.left {
@@ -176,6 +139,8 @@
     section.visible {
       opacity: 1;
       transform: translateX(0);
+      background-color: #fff8e1;
+      box-shadow: 0 0 15px rgba(255, 192, 0, 0.3);
     }
 
     section:nth-of-type(odd) {
@@ -241,156 +206,91 @@
       cursor: pointer;
       z-index: 20;
     }
-
-    @media (max-width: 600px) {
-      .nav-item {
-        display: none;
-      }
-      .nav-item.main {
-        display: inline-block;
-      }
-    }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="nav-item main"><a href="#about">About</a></span>
-    <span class="nav-item main"><a href="#skills">Skills</a></span>
-    <span class="nav-item main"><a href="#projects">Projects</a></span>
-    <span class="dropdown">
-      <span class="nav-item"><a href="#">More ▾</a></span>
-      <div class="dropdown-content">
-        <a href="#contact">Contact</a>
-        <a href="#tester">Tester</a>
-        <a href="#meeting">Meeting</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#data">Data</a>
-        <a href="#awards">Awards</a>
-        <a href="#languages">Languages</a>
-        <a href="#tools">Tools</a>
-      </div>
-    </span>
+    <div class="hamburger" onclick="toggleMobileMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="#about">About</a></div>
+      <div class="nav-item"><a href="#experience">Experience</a></div>
+      <div class="nav-item"><a href="#projects">Projects</a></div>
+      <div class="nav-item"><a href="#skills">Skills</a></div>
+      <div class="nav-item"><a href="#contact">Contact</a></div>
+    </div>
   </nav>
+  <div class="nav-mobile" id="mobileMenu">
+    <div class="nav-item"><a href="#about">About</a></div>
+    <div class="nav-item"><a href="#experience">Experience</a></div>
+    <div class="nav-item"><a href="#projects">Projects</a></div>
+    <div class="nav-item"><a href="#skills">Skills</a></div>
+    <div class="nav-item"><a href="#contact">Contact</a></div>
+  </div>
 
   <header>
-    <h1>Welcome to My Portfolio</h1>
-    <p>Thank you for visiting. This is a glimpse into my career journey and fintech passion.</p>
+    <h1>Senior Business Analyst Portfolio</h1>
+    <p>Designed with LioBank-inspired style</p>
     <div id="datetime"></div>
   </header>
 
-  <div class="banner">
-    <img src="images/Banner.svg" alt="Fintech Banner">
-  </div>
-
   <section id="about">
-    <h2>About</h2>
-    <p>Professional Business Analyst with 6+ years in the fintech industry...</p>
+    <h2>About Me</h2>
+    <p>I am a results-driven Senior Business Analyst with a passion for fintech innovation and user-centric design.</p>
   </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
+  <section id="experience">
+    <h2>Experience</h2>
     <ul>
-      <li>Business Process Modeling</li>
-      <li>Stakeholder Communication</li>
-      <li>SQL, Excel, BPMN</li>
+      <li>5+ years in digital banking and financial services</li>
+      <li>Led cross-functional teams through successful product launches</li>
+      <li>Extensive experience with core banking and third-party integrations</li>
     </ul>
   </section>
 
   <section id="projects">
-    <h2>Projects</h2>
+    <h2>Key Projects</h2>
     <ul>
-      <li>Digital Onboarding System – LioBank</li>
-      <li>Loan Management Workflow Automation</li>
+      <li>Digital Onboarding Platform for Retail Users</li>
+      <li>Loan Origination System (LOS) Enhancement</li>
+      <li>Data Warehouse Integration with Credit Risk Engine</li>
     </ul>
   </section>
 
-  <section id="awards">
-    <h2>Awards</h2>
-    <div class="illustration">
-      <img src="images/awards.svg" alt="Awards">
-    </div>
-    <p>Recognized as “Best BA of the Year” in 2023...</p>
-  </section>
-
-  <section id="languages">
-    <h2>Languages</h2>
-    <div class="illustration">
-      <img src="images/languages.svg" alt="Languages">
-    </div>
+  <section id="skills">
+    <h2>Skills & Tools</h2>
     <ul>
-      <li>Vietnamese – Native</li>
-      <li>English – Advanced</li>
-      <li>Japanese – Beginner</li>
+      <li>JIRA, Confluence, Figma</li>
+      <li>SQL, BPMN, UML</li>
+      <li>Stakeholder Management, Agile Methodology</li>
     </ul>
-  </section>
-
-  <section id="tools">
-    <h2>Tools</h2>
-    <div class="illustration">
-      <img src="images/tools.svg" alt="Tools">
-    </div>
-    <ul>
-      <li>Jira, Confluence, Trello</li>
-      <li>Figma, Balsamiq</li>
-      <li>SQL Server, BigQuery</li>
-    </ul>
-  </section>
-
-  <section id="tester">
-    <h2>Tester</h2>
-    <div class="illustration">
-      <img src="images/tester.svg" alt="Tester">
-    </div>
-    <p>Experienced in supporting QA teams...</p>
-  </section>
-
-  <section id="meeting">
-    <h2>Meeting</h2>
-    <div class="illustration">
-      <img src="images/meeting.svg" alt="Meeting">
-    </div>
-    <p>Organizing and facilitating meetings...</p>
-  </section>
-
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="illustration">
-      <img src="images/certification.svg" alt="Certifications">
-    </div>
-    <p>Certified in Business Analysis, Agile Practices...</p>
-  </section>
-
-  <section id="data">
-    <h2>Data</h2>
-    <div class="illustration">
-      <img src="images/data.svg" alt="Data">
-    </div>
-    <p>Data-driven decision making...</p>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
+    <p>Email: yourname@example.com</p>
     <p>LinkedIn: linkedin.com/in/yourname</p>
-    <p>GitHub: github.com/yourusername</p>
   </section>
 
   <footer>
-    &copy; 2025 Your Name. All rights reserved.
+    <p>&copy; 2025 Senior BA Portfolio</p>
   </footer>
 
-  <button class="pdf-button" onclick="window.print()">Export to PDF</button>
+  <button class="pdf-button">Download PDF</button>
 
   <script>
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("nav a");
+    const navLinks = document.querySelectorAll("nav a, .nav-mobile a");
 
     sections.forEach((sec, index) => {
       sec.classList.add(index % 2 === 0 ? 'left' : 'right');
     });
 
-    function revealOnScroll() {
+    const revealOnScroll = () => {
       const triggerBottom = window.innerHeight * 0.85;
       sections.forEach(section => {
         const boxTop = section.getBoundingClientRect().top;
@@ -398,23 +298,22 @@
           section.classList.add("visible");
         }
       });
-    }
+    };
 
-    function highlightNav() {
-      let currentId = "";
-      sections.forEach(section => {
-        const boxTop = section.getBoundingClientRect().top;
-        if (boxTop <= 100) {
-          currentId = section.getAttribute("id");
-        }
-      });
-
+    const highlightNav = () => {
+      let fromTop = window.scrollY + 120;
       navLinks.forEach(link => {
-        link.classList.remove("active");
-        if (link.getAttribute("href") === "#" + currentId) {
+        const section = document.querySelector(link.getAttribute("href"));
+        if (section.offsetTop <= fromTop && section.offsetTop + section.offsetHeight > fromTop) {
           link.classList.add("active");
+        } else {
+          link.classList.remove("active");
         }
       });
+    };
+
+    function toggleMobileMenu() {
+      document.getElementById("mobileMenu").classList.toggle("show");
     }
 
     window.addEventListener("scroll", () => {
@@ -425,15 +324,13 @@
     window.addEventListener("load", () => {
       revealOnScroll();
       highlightNav();
+      const dtElem = document.getElementById("datetime");
+      if (dtElem) {
+        const dt = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+        dtElem.textContent = dt.toLocaleDateString("en-US", options);
+      }
     });
-
-    function updateDateTime() {
-      const dt = new Date();
-      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
-      document.getElementById("datetime").textContent = dt.toLocaleDateString("en-US", options);
-    }
-
-    updateDateTime();
   </script>
 
 </body>
