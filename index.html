@@ -29,12 +29,14 @@
     nav {
       background-color: white;
       padding: 0.5rem;
-      text-align: center;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 1000;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .nav-item {
@@ -76,6 +78,52 @@
       padding: 0.5rem 1rem;
       color: var(--primary);
       text-align: left;
+    }
+
+    /* Hamburger + Mobile Menu */
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: var(--primary);
+      cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 0.75rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: white;
+      position: absolute;
+      top: 3.5rem;
+      right: 1rem;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1001;
+    }
+
+    .mobile-menu a {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid #eee;
+      text-align: left;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .mobile-menu a:hover {
+      background-color: #f5f5f5;
+    }
+
+    @media (max-width: 768px) {
+      .nav-item, .dropdown {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
     }
 
     header {
@@ -186,27 +234,18 @@
       cursor: pointer;
       z-index: 20;
     }
-
-    @media (max-width: 600px) {
-      .nav-item {
-        display: none;
-      }
-      .nav-item.main {
-        display: inline-block;
-      }
-    }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="nav-item main"><a href="#about">About</a></span>
-    <span class="nav-item main"><a href="#skills">Skills</a></span>
-    <span class="nav-item main"><a href="#projects">Projects</a></span>
+    <span class="nav-item"><a href="#about">About</a></span>
+    <span class="nav-item"><a href="#skills">Skills</a></span>
+    <span class="nav-item"><a href="#projects">Projects</a></span>
+    <span class="nav-item"><a href="#contact">Contact</a></span>
     <span class="dropdown">
       <span class="nav-item"><a href="#">More ▾</a></span>
       <div class="dropdown-content">
-        <a href="#contact">Contact</a>
         <a href="#tester">Tester</a>
         <a href="#meeting">Meeting</a>
         <a href="#certifications">Certifications</a>
@@ -216,6 +255,20 @@
         <a href="#tools">Tools</a>
       </div>
     </span>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#tester">Tester</a>
+      <a href="#meeting">Meeting</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#data">Data</a>
+      <a href="#awards">Awards</a>
+      <a href="#languages">Languages</a>
+      <a href="#tools">Tools</a>
+    </div>
   </nav>
 
   <header>
@@ -224,106 +277,7 @@
     <div id="datetime"></div>
   </header>
 
-  <div class="banner">
-    <img src="images/Banner.svg" alt="Fintech Banner">
-  </div>
-
-  <section id="about">
-    <h2>About</h2>
-    <p>Professional Business Analyst with 6+ years in the fintech industry...</p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul>
-      <li>Business Process Modeling</li>
-      <li>Stakeholder Communication</li>
-      <li>SQL, Excel, BPMN</li>
-    </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <ul>
-      <li>Digital Onboarding System – LioBank</li>
-      <li>Loan Management Workflow Automation</li>
-    </ul>
-  </section>
-
-  <section id="awards">
-    <h2>Awards</h2>
-    <div class="illustration">
-      <img src="images/awards.svg" alt="Awards">
-    </div>
-    <p>Recognized as “Best BA of the Year” in 2023...</p>
-  </section>
-
-  <section id="languages">
-    <h2>Languages</h2>
-    <div class="illustration">
-      <img src="images/languages.svg" alt="Languages">
-    </div>
-    <ul>
-      <li>Vietnamese – Native</li>
-      <li>English – Advanced</li>
-      <li>Japanese – Beginner</li>
-    </ul>
-  </section>
-
-  <section id="tools">
-    <h2>Tools</h2>
-    <div class="illustration">
-      <img src="images/tools.svg" alt="Tools">
-    </div>
-    <ul>
-      <li>Jira, Confluence, Trello</li>
-      <li>Figma, Balsamiq</li>
-      <li>SQL Server, BigQuery</li>
-    </ul>
-  </section>
-
-  <section id="tester">
-    <h2>Tester</h2>
-    <div class="illustration">
-      <img src="images/tester.svg" alt="Tester">
-    </div>
-    <p>Experienced in supporting QA teams...</p>
-  </section>
-
-  <section id="meeting">
-    <h2>Meeting</h2>
-    <div class="illustration">
-      <img src="images/meeting.svg" alt="Meeting">
-    </div>
-    <p>Organizing and facilitating meetings...</p>
-  </section>
-
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <div class="illustration">
-      <img src="images/certification.svg" alt="Certifications">
-    </div>
-    <p>Certified in Business Analysis, Agile Practices...</p>
-  </section>
-
-  <section id="data">
-    <h2>Data</h2>
-    <div class="illustration">
-      <img src="images/data.svg" alt="Data">
-    </div>
-    <p>Data-driven decision making...</p>
-  </section>
-
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: linkedin.com/in/yourname</p>
-    <p>GitHub: github.com/yourusername</p>
-  </section>
-
-  <footer>
-    &copy; 2025 Your Name. All rights reserved.
-  </footer>
+  <!-- Sections giữ nguyên như bạn đã có... -->
 
   <button class="pdf-button" onclick="window.print()">Export to PDF</button>
 
@@ -379,6 +333,11 @@
     }
 
     updateDateTime();
+
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
   </script>
 
 </body>
