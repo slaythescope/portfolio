@@ -37,21 +37,76 @@
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
     }
 
-    .nav-item {
-      display: inline-block;
-      margin: 0 1rem;
+    nav {
+      background-color: white;
+      padding: 0.5rem 1rem;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
     }
 
     .nav-item a {
       text-decoration: none;
       color: var(--primary);
       font-weight: bold;
-      transition: border-bottom 0.2s;
     }
 
-    nav a.active {
+    .nav-item a.active {
+      color: var(--accent);
       border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
     }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: var(--primary);
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    .nav-mobile {
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: white;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-mobile.show {
+      display: flex;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
 
     .dropdown {
       display: inline-block;
