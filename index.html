@@ -309,9 +309,11 @@
     <p>Thank you for visiting. This is a glimpse into my career journey and fintech passion.</p>
       <div id="datetime"></div>
   </header>
-  <div class="banner">
-    <img src="images/Banner.jpg" alt="Fintech Banner">
-  </div>
+
+<div class="banner">
+  <img id="bannerImg" src="images/Banner.jpg" alt="Fintech Banner">
+</div>
+  
 <section id="about">
   <h2>About</h2>
   <p>I'm a Senior Business Analyst with 6+ years of experience in banking. Passionate about digital transformation, customer-centric solutions, and data-driven decision making.</p>
@@ -479,7 +481,8 @@
     const lightboxImg = document.getElementById('lightbox-img');
     const awardImgs = document.querySelectorAll('.awards-gallery img');
     const certImgs = document.querySelectorAll('.certifications-gallery img');
-    const allImgs = [...awardImgs, ...certImgs];
+    const bannerImg = document.getElementById('bannerImg');
+    const allImgs = [...awardImgs, ...certImgs,...bannerImg];
 
     allImgs.forEach(img => {
       img.addEventListener('click', () => {
