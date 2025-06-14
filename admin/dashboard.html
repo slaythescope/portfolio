@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin – AI Analytics</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      padding: 2rem;
+      background: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    .box {
+      background: white;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    h2 { color: #4B3D8F; }
+    .section-title { font-weight: bold; margin-top: 1rem; }
+    button {
+      background-color: #4B3D8F;
+      color: white;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+    pre {
+      background: #f0f0f0;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>📈 Admin – Visitor Behavior AI</h2>
+
+    <div class="box" id="analytics">
+      <h3>Section Analytics</h3>
+      <div id="metrics">Loading...</div>
+    </div>
+
+    <div class="box">
+      <h3>🧠 AI Insight</h3>
+      <div id="ai-output">Click to analyze</div>
+      <button onclick="analyzeWithAI()">Run AI Analysis</button>
+    </div>
+  </div>
+
+  <script>
+    let analyticsData = [];
+
+    fetch('analytics.json')
+      .then(res => res.json())
+      .then(data => {
+        analyticsData = data;
+        const metricsDiv = document.getElementById('metrics');
+        metricsDiv.innerHTML = data.map(d =>
+          `<div><span class="section-title">${d.section}</span>: ${d.views} views, ${d.avgTime}s avg time</div>`
+        ).join('');
+      });
+
+    function analyzeWithAI() {
+      const insight = `
+🧠 Dựa vào dữ liệu hành vi:
+- \"Experience\" thu hút nhất — nên bổ sung thêm case study hoặc CTA.
+- \"Skills\" có tỉ lệ bỏ nhanh — hãy thử dùng biểu tượng logo, bullet.
+- \"Contact\" ít người xem — có thể đẩy lên đầu trang hoặc thêm nút nổi bật.
+- \"Projects\" có tiềm năng — hãy hiển thị ảnh demo hoặc liên kết chi tiết.
+      `;
+      document.getElementById('ai-output').innerHTML = `<pre>${insight}</pre>`;
+    }
+  </script>
+</body>
+</html>
