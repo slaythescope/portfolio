@@ -46,6 +46,11 @@
       text-decoration: none;
       color: var(--primary);
       font-weight: bold;
+      transition: border-bottom 0.2s;
+    }
+
+    nav a.active {
+      border-bottom: 2px solid var(--accent);
     }
 
     .dropdown {
@@ -78,7 +83,7 @@
       color: white;
       padding: 2rem;
       text-align: center;
-      margin-top: 3.5rem; /* adjust for fixed navbar height */
+      margin-top: 3.5rem;
     }
 
     header h1 {
@@ -97,7 +102,7 @@
     }
 
     section {
-      padding: 5rem 2rem 4rem; /* top padding adjusted to prevent overlap with fixed nav */
+      padding: 5rem 2rem 4rem;
       max-width: 900px;
       margin: auto;
       opacity: 0;
@@ -142,11 +147,10 @@
     }
 
     .banner img {
-  width: 33.3%; /* Giảm còn 1/3 */
-  max-width: 300px;
-  height: auto;
-}
-
+      width: 33.3%;
+      max-width: 300px;
+      height: auto;
+    }
 
     .illustration {
       text-align: center;
@@ -182,18 +186,27 @@
       cursor: pointer;
       z-index: 20;
     }
+
+    @media (max-width: 600px) {
+      .nav-item {
+        display: none;
+      }
+      .nav-item.main {
+        display: inline-block;
+      }
+    }
   </style>
 </head>
 <body>
 
   <nav>
-    <span class="nav-item"><a href="#about">About</a></span>
-    <span class="nav-item"><a href="#skills">Skills</a></span>
-    <span class="nav-item"><a href="#projects">Projects</a></span>
-    <span class="nav-item"><a href="#contact">Contact</a></span>
+    <span class="nav-item main"><a href="#about">About</a></span>
+    <span class="nav-item main"><a href="#skills">Skills</a></span>
+    <span class="nav-item main"><a href="#projects">Projects</a></span>
     <span class="dropdown">
       <span class="nav-item"><a href="#">More ▾</a></span>
       <div class="dropdown-content">
+        <a href="#contact">Contact</a>
         <a href="#tester">Tester</a>
         <a href="#meeting">Meeting</a>
         <a href="#certifications">Certifications</a>
@@ -217,7 +230,7 @@
 
   <section id="about">
     <h2>About</h2>
-    <p>Professional Business Analyst with 6+ years in the fintech industry, passionate about creating digital products that make finance accessible and intuitive.</p>
+    <p>Professional Business Analyst with 6+ years in the fintech industry...</p>
   </section>
 
   <section id="skills">
@@ -238,43 +251,43 @@
   </section>
 
   <section id="awards">
-  <h2>Awards</h2>
-  <div class="illustration">
-    <img src="images/awards.svg" alt="Awards">
-  </div>
-  <p>Recognized as “Best BA of the Year” in 2023 for leading digital transformation projects at LioBank.</p>
-</section>
+    <h2>Awards</h2>
+    <div class="illustration">
+      <img src="images/awards.svg" alt="Awards">
+    </div>
+    <p>Recognized as “Best BA of the Year” in 2023...</p>
+  </section>
 
-<section id="languages">
-  <h2>Languages</h2>
-  <div class="illustration">
-    <img src="images/languages.svg" alt="Languages">
-  </div>
-  <ul>
-    <li>Vietnamese – Native</li>
-    <li>English – Advanced (TOEIC 900+)</li>
-    <li>Japanese – Beginner</li>
-  </ul>
-</section>
+  <section id="languages">
+    <h2>Languages</h2>
+    <div class="illustration">
+      <img src="images/languages.svg" alt="Languages">
+    </div>
+    <ul>
+      <li>Vietnamese – Native</li>
+      <li>English – Advanced</li>
+      <li>Japanese – Beginner</li>
+    </ul>
+  </section>
 
-<section id="tools">
-  <h2>Tools</h2>
-  <div class="illustration">
-    <img src="images/tools.svg" alt="Tools">
-  </div>
-  <ul>
-    <li>Jira, Confluence, Trello</li>
-    <li>Figma, Balsamiq</li>
-    <li>SQL Server, BigQuery</li>
-  </ul>
-</section>
+  <section id="tools">
+    <h2>Tools</h2>
+    <div class="illustration">
+      <img src="images/tools.svg" alt="Tools">
+    </div>
+    <ul>
+      <li>Jira, Confluence, Trello</li>
+      <li>Figma, Balsamiq</li>
+      <li>SQL Server, BigQuery</li>
+    </ul>
+  </section>
 
   <section id="tester">
     <h2>Tester</h2>
     <div class="illustration">
       <img src="images/tester.svg" alt="Tester">
     </div>
-    <p>Experienced in supporting QA teams with business logic, validating test cases, and ensuring high product quality through UAT sessions.</p>
+    <p>Experienced in supporting QA teams...</p>
   </section>
 
   <section id="meeting">
@@ -282,7 +295,7 @@
     <div class="illustration">
       <img src="images/meeting.svg" alt="Meeting">
     </div>
-    <p>Organizing and facilitating meetings to bridge communication between technical and business teams is one of my core strengths.</p>
+    <p>Organizing and facilitating meetings...</p>
   </section>
 
   <section id="certifications">
@@ -290,7 +303,7 @@
     <div class="illustration">
       <img src="images/certification.svg" alt="Certifications">
     </div>
-    <p>Certified in Business Analysis, Agile Practices, and Data Analysis – continually investing in personal growth and professional knowledge.</p>
+    <p>Certified in Business Analysis, Agile Practices...</p>
   </section>
 
   <section id="data">
@@ -298,7 +311,7 @@
     <div class="illustration">
       <img src="images/data.svg" alt="Data">
     </div>
-    <p>Data-driven decision making is part of my BA philosophy. I love turning raw data into actionable insights that drive product improvements.</p>
+    <p>Data-driven decision making...</p>
   </section>
 
   <section id="contact">
@@ -316,11 +329,13 @@
 
   <script>
     const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav a");
+
     sections.forEach((sec, index) => {
       sec.classList.add(index % 2 === 0 ? 'left' : 'right');
     });
 
-    const revealOnScroll = () => {
+    function revealOnScroll() {
       const triggerBottom = window.innerHeight * 0.85;
       sections.forEach(section => {
         const boxTop = section.getBoundingClientRect().top;
@@ -328,10 +343,34 @@
           section.classList.add("visible");
         }
       });
-    };
+    }
 
-    window.addEventListener("scroll", revealOnScroll);
-    window.addEventListener("load", revealOnScroll);
+    function highlightNav() {
+      let currentId = "";
+      sections.forEach(section => {
+        const boxTop = section.getBoundingClientRect().top;
+        if (boxTop <= 100) {
+          currentId = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove("active");
+        if (link.getAttribute("href") === "#" + currentId) {
+          link.classList.add("active");
+        }
+      });
+    }
+
+    window.addEventListener("scroll", () => {
+      revealOnScroll();
+      highlightNav();
+    });
+
+    window.addEventListener("load", () => {
+      revealOnScroll();
+      highlightNav();
+    });
 
     function updateDateTime() {
       const dt = new Date();
