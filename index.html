@@ -115,6 +115,45 @@
     .mobile-menu a:hover {
       background-color: #f5f5f5;
     }
+.awards-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .awards-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .awards-gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.8);
+      align-items: center;
+      justify-content: center;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
+    }
 
     @media (max-width: 768px) {
       .nav-item, .dropdown {
@@ -306,11 +345,47 @@
   </ul>
 </section>
 
-<section id="awards">
-  <h2>Awards</h2>
-  <p>Best Business Analyst of the Year – LioBank, 2023</p>
-  <p>Innovation Contributor – Digital Loan Automation, 2022</p>
-</section>
+<section class="awards-section">
+    <h2>Awards</h2>
+    <div class="awards-gallery">
+      <img src="images/award1.jpg" alt="Award 1">
+      <img src="images/award2.jpg" alt="Award 2">
+      <img src="images/award3.jpg" alt="Award 3">
+      <img src="images/award4.jpg" alt="Award 4">
+      <img src="images/award5.jpg" alt="Award 5">
+      <img src="images/award6.jpg" alt="Award 6">
+    </div>
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox">
+    <img id="lightbox-img" src="" alt="Expanded Award">
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const dt = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+      document.getElementById("datetime").textContent = dt.toLocaleDateString("en-US", options);
+    }
+    updateDateTime();
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const awardImgs = document.querySelectorAll('.awards-gallery img');
+
+    awardImgs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+  </script>
 
 <section id="tester">
   <h2>Tester</h2>
